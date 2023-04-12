@@ -11,38 +11,30 @@ const { Header, Footer, Content } = Layout;
 
 const Ids = () => (
   <Watermark content="ELWEBOOOOO">
-  <Layout>
-    <Header style={headerStyle}>
-      <Divider orientation="center">
-        <Title level={3}>Ingreso</Title>
-      </Divider>
-    </Header>
-    <Content style={contentStyle}>
-      <Space
-        direction="vertical"
-        style={{
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <Login />
-      </Space>
-    </Content>
-    <Footer style={footerStyle}>
-      <Title level={2}>Tu jopotron S.A Presenta</Title>
-      <Space
-        direction="vertical"
-        style={
-          {
+    <Layout>
+      <Header style={headerStyle}>
+        <Divider orientation="center">
+          <Title level={3}>Ingreso</Title>
+        </Divider>
+      </Header>
+      <Content style={contentStyle}>
+        <Space
+          direction="vertical"
+          style={{
             display: "flex",
             alignItems: "center",
-          }
-        }
-      >
-        <Formulario />
-      </Space>
-    </Footer>
-  </Layout>
+          }}
+        >
+          <Login />
+        </Space>
+      </Content>
+      <Footer style={footerStyle}>
+        <Title level={2}>Tu jopotron S.A Presenta</Title>
+        <Space>
+          <Formulario />
+        </Space>
+      </Footer>
+    </Layout>
   </Watermark>
 );
 

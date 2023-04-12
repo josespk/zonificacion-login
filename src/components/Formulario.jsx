@@ -21,28 +21,37 @@ const Formularioxd = () => {
   return (
     <Form
       labelCol={{
-        x: "block",
+        flex: "0.3",
       }}
       wrapperCol={{
-        flex: "block",
+        flex: "1",
       }}
       layout="horizontal"
       style={{
-        backgroundColor: "red",
-        //minWidth: 600,
+        backgroundColor: "pink",
+        padding: 10,
+        minWidth: 600,
       }}
     >
-      <Form.Item
-        style={{ display: "inline-flex", alignItems: "center", backgroundColor: "pink"}}
-      ><Divider orientation="left">Direccion</Divider>
+      <Form.Item style={{
+            display: "auto",
+            backgroundColor: "red",            
+          }}>
+        <Divider orientation="left">Direccion</Divider>
+        <div style={{
+            display: "inline flex",
+            backgroundColor: "blue",
+            alignItems: "center",
+          }}>
         <Select>
           <Select.Option value="optionxd1">Calle</Select.Option>
           <Select.Option value="optionxd2">Carrera</Select.Option>
           <Select.Option value="optionxd3">Avenida</Select.Option>
           <Select.Option value="optionxd4">Diagonal</Select.Option>
-        </Select> 
+        </Select>
         <Input /> Numero #
-        <InputNumber /><InputNumber />
+        <InputNumber /> <p>—</p> <InputNumber />
+        </div>
       </Form.Item>
       <Form.Item label="Radiofrecuencia">
         <Radio.Group>
