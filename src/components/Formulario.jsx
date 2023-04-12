@@ -4,10 +4,12 @@ import {
   Cascader,
   Checkbox,
   DatePicker,
+  Divider,
   Form,
   Input,
   InputNumber,
   Radio,
+  Row,
   Select,
   Switch,
   TreeSelect,
@@ -19,20 +21,28 @@ const Formularioxd = () => {
   return (
     <Form
       labelCol={{
-        flex: "auto",
+        x: "block",
       }}
       wrapperCol={{
-        flex: "auto",
+        flex: "block",
       }}
       layout="horizontal"
-      style={
-        {
-          //minWidth: 600,
-        }
-      }
+      style={{
+        backgroundColor: "red",
+        //minWidth: 600,
+      }}
     >
-      <Form.Item label="Clickea" name="disabled" valuePropName="checked">
-        <Checkbox>tE gUstO ioP UwU??</Checkbox>
+      <Form.Item
+        style={{ display: "inline-flex", alignItems: "center", backgroundColor: "pink"}}
+      ><Divider orientation="left">Direccion</Divider>
+        <Select>
+          <Select.Option value="optionxd1">Calle</Select.Option>
+          <Select.Option value="optionxd2">Carrera</Select.Option>
+          <Select.Option value="optionxd3">Avenida</Select.Option>
+          <Select.Option value="optionxd4">Diagonal</Select.Option>
+        </Select> 
+        <Input /> Numero #
+        <InputNumber /><InputNumber />
       </Form.Item>
       <Form.Item label="Radiofrecuencia">
         <Radio.Group>
