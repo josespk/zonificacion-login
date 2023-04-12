@@ -14,44 +14,60 @@ import {
   Switch,
   TreeSelect,
   Upload,
+  Space,
+  Col,
 } from "antd";
 const { RangePicker } = DatePicker;
 const { TextArea } = Input;
 const Formularioxd = () => {
   return (
     <Form
-      labelCol={{
-        flex: "0.3",
-      }}
-      wrapperCol={{
-        flex: "1",
-      }}
+      labelCol={{ flex: "0.5" }}
+      wrapperCol={{ span: "auto" }}
       layout="horizontal"
       style={{
         backgroundColor: "pink",
-        padding: 10,
-        minWidth: 600,
+        padding: 40,
+        //maxWidth: 500,
       }}
     >
-      <Form.Item style={{
-            display: "auto",
-            backgroundColor: "red",            
-          }}>
+      <Form.Item
+        style={{
+          display: "auto",
+          backgroundColor: "red",
+        }}
+      >
         <Divider orientation="left">Direccion</Divider>
-        <div style={{
-            display: "inline flex",
-            backgroundColor: "blue",
-            alignItems: "center",
-          }}>
-        <Select>
-          <Select.Option value="optionxd1">Calle</Select.Option>
-          <Select.Option value="optionxd2">Carrera</Select.Option>
-          <Select.Option value="optionxd3">Avenida</Select.Option>
-          <Select.Option value="optionxd4">Diagonal</Select.Option>
-        </Select>
-        <Input /> Numero #
-        <InputNumber /> <p>—</p> <InputNumber />
-        </div>
+        <Space orientation="horizontal">
+          <Space.Compact
+            style={{
+              display: "auto",
+              alignItems: "center",
+            }}
+          >
+            <Select>
+              <Select.Option value="optionxd1">Calle</Select.Option>
+              <Select.Option value="optionxd2">Carrera</Select.Option>
+              <Select.Option value="optionxd3">Avenida</Select.Option>
+              <Select.Option value="optionxd4">Diagonal</Select.Option>
+            </Select>
+            <Input />
+          </Space.Compact>{" "}
+          Numero #
+          <InputNumber /> <p>—</p> <InputNumber />
+        </Space>
+      </Form.Item>
+      <Form.Item
+        name="phone"
+        label="Phone Number"
+        rules={[
+          {
+            required: true,
+            message: "Please input your phone number!",
+          },
+        ]}
+      >
+        <Input />
       </Form.Item>
       <Form.Item label="Radiofrecuencia">
         <Radio.Group>
