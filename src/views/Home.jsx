@@ -30,7 +30,8 @@ const Ids = () => (
       </Content>
       <Footer style={footerStyle}>
         <Title level={2}>Tu jopotron S.A Presenta</Title>
-        <Space>
+        <Space
+        >
           <Formulario />
         </Space>
       </Footer>

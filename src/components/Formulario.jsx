@@ -22,27 +22,35 @@ const { TextArea } = Input;
 const Formularioxd = () => {
   return (
     <Form
-      labelCol={{ flex: "0.5" }}
-      wrapperCol={{ span: "auto" }}
+      labelCol={{ flex: "40%" }}
+      wrapperCol={{ flex: "50%" }}
       layout="horizontal"
       style={{
         backgroundColor: "pink",
         padding: 40,
-        //maxWidth: 500,
+        maxWidth: 500,
       }}
     >
+      <Form.Item label="Enrique">
+        <Select>
+          <Select.Option value="optionxd1">Segoviano</Select.Option>
+        </Select>
+      </Form.Item>
       <Form.Item
+        label="Direccion"
+        name="Direccion"
         style={{
-          display: "auto",
           backgroundColor: "red",
         }}
       >
-        <Divider orientation="left">Direccion</Divider>
-        <Space orientation="horizontal">
+        <Space direction="horizontal">
           <Space.Compact
+            flex
             style={{
               display: "auto",
               alignItems: "center",
+              backgroundColor: "yellow",
+              minWidth: 200,
             }}
           >
             <Select>
@@ -53,17 +61,17 @@ const Formularioxd = () => {
             </Select>
             <Input />
           </Space.Compact>{" "}
-          Numero #
-          <InputNumber /> <p>—</p> <InputNumber />
+          #
+          <InputNumber /> — <InputNumber />
         </Space>
       </Form.Item>
       <Form.Item
         name="phone"
-        label="Phone Number"
+        label="Numero Telefonico"
         rules={[
           {
             required: true,
-            message: "Please input your phone number!",
+            message: "Polfavol el telefono movil!",
           },
         ]}
       >
@@ -81,11 +89,7 @@ const Formularioxd = () => {
       <Form.Item label="Direccion 2">
         <Input />
       </Form.Item>
-      <Form.Item label="Enrique">
-        <Select>
-          <Select.Option value="optionxd1">Segoviano</Select.Option>
-        </Select>
-      </Form.Item>
+
       <Form.Item label="Cuando jue">
         <DatePicker />
       </Form.Item>
