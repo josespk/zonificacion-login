@@ -23,33 +23,51 @@ const Formularioxd = () => {
   return (
     <Form
       labelCol={{ flex: "40%" }}
-      wrapperCol={{ flex: "50%" }}
+      wrapperCol={{ flex: "30%" }}
       layout="horizontal"
       style={{
         backgroundColor: "pink",
         padding: 40,
-        maxWidth: 500,
       }}
     >
-      <Form.Item label="Enrique">
-        <Select>
-          <Select.Option value="optionxd1">Segoviano</Select.Option>
-        </Select>
+      <Form.Item label="Nombre">
+        <Input />
       </Form.Item>
       <Form.Item
-        label="Direccion"
-        name="Direccion"
-        style={{
-          backgroundColor: "red",
-        }}
+        label="Documento"
+        name="documento"
+        rules={[
+          {
+            required: true,
+            message: "CEDULA mi amigo",
+          },
+        ]}
       >
+        <Input />
+      </Form.Item>
+      <Form.Item
+        name="phone"
+        label="Telefono"
+        rules={[
+          {
+            required: true,
+            message: "Polfavol el telefono movil!",
+          },
+        ]}
+      >
+        <InputNumber
+          style={{
+            minWidth: 160,
+          }}
+        />
+      </Form.Item>
+      <Form.Item label="Direccion" name="Direccion">
         <Space direction="horizontal">
           <Space.Compact
             flex
             style={{
               display: "auto",
               alignItems: "center",
-              backgroundColor: "yellow",
               minWidth: 200,
             }}
           >
@@ -65,44 +83,26 @@ const Formularioxd = () => {
           <InputNumber /> — <InputNumber />
         </Space>
       </Form.Item>
-      <Form.Item
-        name="phone"
-        label="Numero Telefonico"
-        rules={[
-          {
-            required: true,
-            message: "Polfavol el telefono movil!",
-          },
-        ]}
-      >
+      <Form.Item label="Barrio">
         <Input />
       </Form.Item>
-      <Form.Item label="Radiofrecuencia">
-        <Radio.Group>
-          <Radio value="radiof1"> Elwebo </Radio>
-          <Radio value="radiof2"> ElWebon't </Radio>
-        </Radio.Group>
-      </Form.Item>
-      <Form.Item label="Direccion 1">
-        <Input />
-      </Form.Item>
-      <Form.Item label="Direccion 2">
-        <Input />
-      </Form.Item>
-
-      <Form.Item label="Cuando jue">
+      <Form.Item label="Fecha de Ingreso">
         <DatePicker />
       </Form.Item>
-      <Form.Item label="Cual jue">
-        <InputNumber />
+      <Form.Item label="Codigo Zona">
+        <InputNumber
+          style={{
+            minWidth: 160,
+          }}
+        />
       </Form.Item>
-      <Form.Item label="Upload" valuePropName="fileList">
+      <Form.Item label="Foto del vale" valuePropName="fileList">
         <Upload action="/upload.do" listType="picture-card">
           <div>
             <PlusOutlined />
             <div
               style={{
-                marginTop: 8,
+                marginTop: 4,
               }}
             >
               Upload
@@ -110,9 +110,11 @@ const Formularioxd = () => {
           </div>
         </Upload>
       </Form.Item>
-      <Form.Item label="asdasdasd">
-        <Button>Enviar</Button>
-      </Form.Item>
+      <Space direction="horizontal">
+        <Form.Item name="send">
+          <Button>Enviar</Button>
+        </Form.Item>
+      </Space>
     </Form>
   );
 };
