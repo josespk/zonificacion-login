@@ -1,3 +1,4 @@
+import { useSpring, animated, useTrail } from "@react-spring/web";
 import { PlusOutlined } from "@ant-design/icons";
 import {
   Button,
@@ -19,21 +20,25 @@ import {
 } from "antd";
 const { RangePicker } = DatePicker;
 const { TextArea } = Input;
+const AnimatedFormItem = animated(Form.Item);
+const animationConfig = { opacity: 1, from: { opacity: 0 }, delay: 100 };
 const Formularioxd = () => {
+  const itemProps = useSpring(animationConfig);
+  const documentoProps = useSpring(animationConfig);
   return (
     <Form
       labelCol={{ flex: "40%" }}
       wrapperCol={{ flex: "30%" }}
       layout="horizontal"
       style={{
-        backgroundColor: "pink",
         padding: 40,
       }}
     >
-      <Form.Item label="Nombre">
+      <AnimatedFormItem style={itemProps} label="Nombre" name="name">
         <Input />
-      </Form.Item>
-      <Form.Item
+      </AnimatedFormItem>
+      <AnimatedFormItem
+        style={documentoProps}
         label="Documento"
         name="documento"
         rules={[
@@ -44,10 +49,11 @@ const Formularioxd = () => {
         ]}
       >
         <Input />
-      </Form.Item>
-      <Form.Item
-        name="phone"
+      </AnimatedFormItem>
+      <AnimatedFormItem
+        style={itemProps}
         label="Telefono"
+        name="phone"
         rules={[
           {
             required: true,
@@ -55,13 +61,9 @@ const Formularioxd = () => {
           },
         ]}
       >
-        <InputNumber
-          style={{
-            minWidth: 160,
-          }}
-        />
-      </Form.Item>
-      <Form.Item label="Direccion" name="Direccion">
+        <InputNumber style={{ minWidth: 160 }} />
+      </AnimatedFormItem>
+      <AnimatedFormItem style={itemProps} label="Direccion" name="direccion">
         <Space direction="horizontal">
           <Space.Compact
             flex
@@ -82,21 +84,21 @@ const Formularioxd = () => {
           #
           <InputNumber /> — <InputNumber />
         </Space>
-      </Form.Item>
-      <Form.Item label="Barrio">
+      </AnimatedFormItem>
+      <AnimatedFormItem style={itemProps} label="Barrio">
         <Input />
-      </Form.Item>
-      <Form.Item label="Fecha de Ingreso">
+      </AnimatedFormItem>
+      <AnimatedFormItem style={itemProps} label="Fecha de Ingreso">
         <DatePicker />
-      </Form.Item>
-      <Form.Item label="Codigo Zona">
+      </AnimatedFormItem>
+      <AnimatedFormItem style={itemProps} label="Codigo Zona">
         <InputNumber
           style={{
             minWidth: 160,
           }}
         />
-      </Form.Item>
-      <Form.Item label="Foto del vale" valuePropName="fileList">
+      </AnimatedFormItem>
+      <Form.Item label="Foto" valuePropName="fileList">
         <Upload action="/upload.do" listType="picture-card">
           <div>
             <PlusOutlined />
@@ -105,12 +107,17 @@ const Formularioxd = () => {
                 marginTop: 4,
               }}
             >
-              Upload
+              Upload your nude here
             </div>
           </div>
         </Upload>
       </Form.Item>
-      <Space direction="horizontal">
+      <Space
+        direction="horizontal"
+        style={{
+          marginLeft: 50,
+        }}
+      >
         <Form.Item name="send">
           <Button>Enviar</Button>
         </Form.Item>
