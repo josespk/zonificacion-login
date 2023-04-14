@@ -17,9 +17,9 @@ import {
   Upload,
   Space,
   Col,
+  Typography,
 } from "antd";
 const { RangePicker } = DatePicker;
-const { TextArea } = Input;
 const AnimatedFormItem = animated(Form.Item);
 const animationConfig = { opacity: 1, from: { opacity: 0 }, delay: 100 };
 const Formularioxd = () => {
@@ -31,7 +31,7 @@ const Formularioxd = () => {
       wrapperCol={{ flex: "30%" }}
       layout="horizontal"
       style={{
-        padding: 40,
+        padding: 20,
       }}
     >
       <AnimatedFormItem style={itemProps} label="Nombre" name="name">
@@ -70,7 +70,7 @@ const Formularioxd = () => {
             style={{
               display: "auto",
               alignItems: "center",
-              minWidth: 200,
+              minWidth: 190,
             }}
           >
             <Select>
@@ -82,7 +82,17 @@ const Formularioxd = () => {
             <Input />
           </Space.Compact>{" "}
           #
-          <InputNumber /> — <InputNumber />
+          <InputNumber
+            style={{
+              maxWidth: 60,
+            }}
+          />{" "}
+          —{" "}
+          <InputNumber
+            style={{
+              maxWidth: 60,
+            }}
+          />
         </Space>
       </AnimatedFormItem>
       <AnimatedFormItem style={itemProps} label="Barrio">
@@ -115,11 +125,13 @@ const Formularioxd = () => {
       <Space
         direction="horizontal"
         style={{
-          marginLeft: 50,
+          marginLeft: 40,
         }}
       >
         <Form.Item name="send">
-          <Button>Enviar</Button>
+          <Button type="primary" htmlType="submit" className="button">
+            Enviar
+          </Button>
         </Form.Item>
       </Space>
     </Form>

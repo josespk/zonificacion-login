@@ -17,18 +17,6 @@ const onFinishFailed = (errorInfo) => {
 
 function Login() {
   return (
-    <ConfigProvider
-      theme={{
-        token: {
-          //fontSize: 18,
-          colorPrimaryBg: "#e6f9ff",
-          colorPrimaryBgHover: "baebff",
-          colorPrimaryBorder: "91dcff",
-          colorPrimary: "#17a0ff",
-          algorithm: "theme.darkAlgorithm",
-        },
-      }}
-    >
       <Form
         name="basic"
         labelCol={{
@@ -96,7 +84,6 @@ function Login() {
           </Button>
         </Form.Item>
       </Form>
-    </ConfigProvider>
   );
 }
 
