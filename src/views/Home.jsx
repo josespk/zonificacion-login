@@ -43,12 +43,7 @@ const LoginAnimated = () => {
         </Header>
         <Content style={contentStyle}>
           <Space
-            direction="vertical"
-            style={{
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
+            direction="vertical"          >
             {" "}
             <LoginAnimated />
           </Space>

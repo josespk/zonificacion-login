@@ -4,7 +4,6 @@ export const headerStyle = {
   height: 64,
   padding: 5,
   lineHeight: "64px",
-  backgroundColor: "#097bd9",
 };
 export const contentStyle = {
   textAlign: "center",
